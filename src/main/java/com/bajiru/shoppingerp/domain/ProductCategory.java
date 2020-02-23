@@ -1,0 +1,54 @@
+package com.bajiru.shoppingerp.domain;
+
+import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @Description create product category class domain
+ * @AuthorName StevenWu
+ * @CreateDateTime 2020-01-25-10:59 上午
+ */
+
+@Entity
+@Table
+@DynamicUpdate
+@Data
+public class ProductCategory {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long categoryId;
+    private String categoryName;
+    private Integer categoryType;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private Date createTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
+    private Date updateTime;
+
+    @OneToMany(mappedBy = "productCategory")
+    private List<ProductInfo> productInfos=new ArrayList<>();
+
+
+    public ProductCategory() {
+    }
+
+    @Override
+    public String toString() {
+        return "ProductCategory{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryType=" + categoryType +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
+}
