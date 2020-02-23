@@ -40,6 +40,10 @@ public class ProductCategory {
 
     public ProductCategory() {
     }
+    public ProductCategory(String categoryName, Integer categoryType) {
+        this.categoryName = categoryName;
+        this.categoryType = categoryType;
+    }
 
     @Override
     public String toString() {
