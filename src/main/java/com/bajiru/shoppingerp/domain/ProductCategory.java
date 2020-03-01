@@ -34,7 +34,7 @@ public class ProductCategory {
     @UpdateTimestamp
     private Date updateTime;
 
-    @OneToMany(mappedBy = "productCategory")
+    @OneToMany(mappedBy = "productCategory", cascade = {CascadeType.ALL})
     private List<ProductInfo> productInfos=new ArrayList<>();
 
 

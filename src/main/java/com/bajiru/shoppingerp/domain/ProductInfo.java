@@ -26,6 +26,7 @@ public class ProductInfo {
     private Integer productStock;
     private String productDescription;
     private String productIcon;
+    //0:上架 1:下架
     private Integer productStatus;
 
     @ManyToOne
