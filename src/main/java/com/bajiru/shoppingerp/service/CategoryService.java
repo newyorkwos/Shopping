@@ -13,5 +13,6 @@ public interface CategoryService {
     ProductCategory findOne(Long categoryId);
     List<ProductCategory> findAll();
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
+    ProductCategory findByCategoryType(Integer categoryType);
     ProductCategory save(ProductCategory productCategory);
 }

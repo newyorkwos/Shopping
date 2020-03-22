@@ -1,5 +1,6 @@
 package com.bajiru.shoppingerp.service.impl;
 
+import com.bajiru.shoppingerp.ProductCategoryEnum;
 import com.bajiru.shoppingerp.ProductStatusEnum;
 import com.bajiru.shoppingerp.domain.ProductInfo;
 import org.junit.Assert;
@@ -53,14 +54,13 @@ class ProductServiceImplTest {
     @Test
     void save() {
         ProductInfo productInfo=new ProductInfo();
-        //productInfo.setProductId(123457L);
-        productInfo.setProductName("鹹蛋");
-        productInfo.setProductPrice(30L);
+        productInfo.setProductName("抓餅蛋");
+        productInfo.setProductPrice(35L);
         productInfo.setProductStock(100);
         productInfo.setProductDescription("很好吃");
         productInfo.setProductIcon("https://res.klook.com/image/upload/fl_lossy.progressive/q_auto/f_auto/blogtw/%E9%BE%8D%E8%B2%93%E5%9C%96%E7%89%87.jpg");
         productInfo.setProductStatus(ProductStatusEnum.DOWN.getCode());
-        productInfo.setProductCategory(categoryService.findOne(8L));
+        productInfo.setProductCategory(categoryService.findByCategoryType(ProductCategoryEnum.food.getCode()));
         ProductInfo result=productService.save(productInfo);
         Assert.assertNotNull(result);
 

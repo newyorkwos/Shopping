@@ -35,6 +35,11 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public ProductCategory findByCategoryType(Integer categoryType) {
+        return repository.findByCategoryType(categoryType);
+    }
+
+    @Override
     public ProductCategory save(ProductCategory productCategory) {
         return repository.save(productCategory);
     }
