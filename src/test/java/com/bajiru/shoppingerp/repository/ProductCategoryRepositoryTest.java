@@ -42,7 +42,7 @@ public class ProductCategoryRepositoryTest {
         Long id=1L;
         ProductCategory productCategory=repository.findById(id).orElse(null);
         productCategory.setCategoryName("男生最愛");
-        productCategory.setCategoryType(4);
+        productCategory.setCategoryType(2);
         ProductCategory result=repository.save(productCategory);
         Assert.assertNotNull(result);
         //repository.save(productCategory);
