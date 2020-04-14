@@ -7,6 +7,7 @@ import com.bajiru.shoppingerp.domain.ProductCategory;
 import com.bajiru.shoppingerp.domain.ProductInfo;
 import com.bajiru.shoppingerp.service.CategoryService;
 import com.bajiru.shoppingerp.service.ProductService;
+import com.bajiru.shoppingerp.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,14 +61,8 @@ public class BuyerProductController {
             productVO.setProductInfoVOList(productInfoVOList);
             productVOList.add(productVO);
         }
-        ResultVO resultVO=new ResultVO();
 
-        resultVO.setData(productVOList);
-        resultVO.setCode(0);
-        resultVO.setMsg("成功");
-
-
-        return resultVO;
+        return ResultVOUtil.success(productVOList);
     }
 
 }
