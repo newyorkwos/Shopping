@@ -20,14 +20,19 @@ import java.util.List;
 @DynamicUpdate
 @Data
 public class OrderDetail {
-
+    // Order id
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long detailId;
+
+    //product quantity
     private Integer productQuantity;
+
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date createTime;
+
+
     @Temporal(TemporalType.TIMESTAMP)
     @UpdateTimestamp
     private Date updateTime;

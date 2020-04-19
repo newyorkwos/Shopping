@@ -1,7 +1,7 @@
 package com.bajiru.shoppingerp.service.impl;
 
-import com.bajiru.shoppingerp.ProductCategoryEnum;
-import com.bajiru.shoppingerp.ProductStatusEnum;
+import com.bajiru.shoppingerp.enums.ProductCategoryEnum;
+import com.bajiru.shoppingerp.enums.ProductStatusEnum;
 import com.bajiru.shoppingerp.domain.ProductInfo;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

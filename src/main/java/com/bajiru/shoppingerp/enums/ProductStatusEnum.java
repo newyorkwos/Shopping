@@ -1,4 +1,4 @@
-package com.bajiru.shoppingerp;
+package com.bajiru.shoppingerp.enums;
 
 import lombok.Getter;
 
