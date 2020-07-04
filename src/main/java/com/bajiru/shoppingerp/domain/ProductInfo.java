@@ -29,7 +29,7 @@ public class ProductInfo {
     //0:上架 1:下架
     private Integer productStatus;
 
-    @ManyToOne
+    @OneToOne(mappedBy = "productInfo")//被維護方
     private OrderDetail orderDetail;
 
     @Temporal(TemporalType.TIMESTAMP)

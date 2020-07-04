@@ -3,8 +3,6 @@ package com.bajiru.shoppingerp.repository;
 import com.bajiru.shoppingerp.domain.OrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
 /**
  * @Description ceate orderDetail repository
  * @AuthorName StevenWu
@@ -12,5 +10,5 @@ import java.util.List;
  */
 public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> {
 
-    List<OrderDetail> findByOrderMasterByOrderId(Long orderId);
+    //List<OrderDetail> findOrderDetailByOrderMaster_BuyerOpenId
 }

@@ -6,9 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Description create order detail domain
@@ -40,8 +38,10 @@ public class OrderDetail {
     @ManyToOne
     private OrderMaster orderMaster;
 
-    @OneToMany(mappedBy = "orderDetail")
-    private List<ProductInfo> productInfos=new ArrayList<>();
+    //@OneToMany(mappedBy = "orderDetail", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+    //private List<ProductInfo> productInfos=new ArrayList<>();
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}) //當儲存oredrdetail時，productInfo也要被保存,Merge=集聯更新
+    private ProductInfo productInfo;
 
     public OrderDetail() {
     }

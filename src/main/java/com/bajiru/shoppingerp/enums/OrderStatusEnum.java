@@ -2,10 +2,7 @@ package com.bajiru.shoppingerp.enums;
 
 import lombok.Getter;
 
-/**
- * Created by 廖师兄
- * 2017-06-11 17:12
- */
+
 @Getter
 public enum OrderStatusEnum implements CodeEnum {
     NEW(0, "新訂單"),
