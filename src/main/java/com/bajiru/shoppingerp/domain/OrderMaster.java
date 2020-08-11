@@ -8,9 +8,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Description create Order Master domain
@@ -41,6 +39,9 @@ public class OrderMaster {
     //total money
     private Float orderAmount;
 
+//    @ManyToMany
+//    private List<ProductInfo> productInfos=new ArrayList<>();
+
     // Order status 0 new order
     private Integer orderStatus= OrderStatusEnum.NEW.getCode();
 
@@ -54,9 +55,6 @@ public class OrderMaster {
     @Temporal(TemporalType.TIMESTAMP)
     @UpdateTimestamp
     private Date updateTime;
-
-    @OneToMany(mappedBy = "orderMaster")
-    private List<OrderDetail> orderDetails=new ArrayList<>();
 
     public OrderMaster() {
     }

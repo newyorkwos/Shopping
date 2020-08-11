@@ -6,7 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 /**
  * @Description create production class
@@ -29,8 +29,10 @@ public class ProductInfo {
     //0:上架 1:下架
     private Integer productStatus;
 
-    @OneToOne(mappedBy = "productInfo")//被維護方
-    private OrderDetail orderDetail;
+//    @OneToOne(mappedBy = "productInfo")//被維護方
+//    private OrderDetail orderDetail;
+    @ManyToMany(mappedBy = "productInfos")
+    private Set<OrderMaster> orderMasters=new HashSet<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
