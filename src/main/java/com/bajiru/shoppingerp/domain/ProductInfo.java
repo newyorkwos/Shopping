@@ -31,8 +31,8 @@ public class ProductInfo {
 
 //    @OneToOne(mappedBy = "productInfo")//被維護方
 //    private OrderDetail orderDetail;
-    @ManyToMany(mappedBy = "productInfos")
-    private Set<OrderMaster> orderMasters=new HashSet<>();
+//    @ManyToMany(mappedBy = "productInfos")
+//    private Set<OrderMaster> orderMasters=new HashSet<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
