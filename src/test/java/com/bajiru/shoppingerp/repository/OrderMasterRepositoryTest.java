@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -36,10 +38,10 @@ class OrderMasterRepositoryTest {
         Assert.assertNotNull(result);
 
     }
-//    @Test
-//    public void findByBuyerOpenId() throws Exception {
-//        PageRequest request= PageRequest.of(0,1);
-//        Page<OrderMaster> result= orderMasterRepository.findByBuyerOpenId(OPENID, request);
-//        System.out.println(result.getTotalElements());
-//    }
+    @Test
+    public void findByBuyerOpenId() throws Exception {
+        PageRequest request= PageRequest.of(0,3);
+        Page<OrderMaster> result= orderMasterRepository.findByBuyerOpenId(OPENID, request);
+        System.out.println(result.getTotalElements());
+    }
 }
