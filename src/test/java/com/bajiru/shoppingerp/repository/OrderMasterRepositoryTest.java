@@ -42,6 +42,7 @@ class OrderMasterRepositoryTest {
     public void findByBuyerOpenId() throws Exception {
         PageRequest request= PageRequest.of(0,3);
         Page<OrderMaster> result= orderMasterRepository.findByBuyerOpenId(OPENID, request);
-        System.out.println(result.getTotalElements());
+        //System.out.println(result.getTotalElements());
+        Assert.assertNotEquals(0,result.getTotalElements());
     }
 }

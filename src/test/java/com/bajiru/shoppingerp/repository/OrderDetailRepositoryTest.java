@@ -1,5 +1,8 @@
 package com.bajiru.shoppingerp.repository;
 
+import com.bajiru.shoppingerp.domain.OrderDetail;
+import com.bajiru.shoppingerp.domain.OrderMaster;
+import com.bajiru.shoppingerp.domain.ProductInfo;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +29,13 @@ class OrderDetailRepositoryTest {
 
     @Test
     public void saveTest(){
-//        OrderDetail orderDetail=new OrderDetail();
-//        orderDetail.setOrderMaster(orderMasterRepository.getOne(2L));
-//        List<Long> list= Arrays.asList(3L,4L);
-//        //orderDetail.setProductInfos(productInfoRepository.findAllById(list));
-//        OrderDetail result=orderDetailRepository.save(orderDetail);
-//        Assert.assertNotNull(result);
+        OrderDetail orderDetail=new OrderDetail();
+        OrderMaster orderMaster=new OrderMaster();
+        orderMaster.setOrderId(11111123L);
+        //orderDetail.setOrderMaster(orderMasterRepository.getOne(2L));
+        orderDetail.setOrderMaster(orderMaster);
+        ProductInfo productInfo=new ProductInfo();
+
     }
 
     @Test
