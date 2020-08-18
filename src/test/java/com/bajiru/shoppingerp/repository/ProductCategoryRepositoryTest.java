@@ -26,8 +26,8 @@ public class ProductCategoryRepositoryTest {
     @Test
     public void saveTest(){
         ProductCategory productCategory=new ProductCategory();
-        productCategory.setCategoryName("One");
-        productCategory.setCategoryType(4);
+        productCategory.setCategoryName("Three");
+        productCategory.setCategoryType(3);
         repository.save(productCategory);
     }
     @Test
@@ -41,8 +41,8 @@ public class ProductCategoryRepositoryTest {
     public void updateTest(){
         Long id=1L;
         ProductCategory productCategory=repository.findById(id).orElse(null);
-        productCategory.setCategoryName("男生最愛");
-        productCategory.setCategoryType(2);
+        productCategory.setCategoryName("One");
+        productCategory.setCategoryType(1);
         ProductCategory result=repository.save(productCategory);
         Assert.assertNotNull(result);
         //repository.save(productCategory);

@@ -28,6 +28,9 @@ public class ProductInfo {
     private String productIcon;
     //0:上架 1:下架
     private Integer productStatus;
+    private Integer productQuantity;
+    @OneToOne
+    private OrderDetail orderDetail;
 
 //    @OneToOne(mappedBy = "productInfo")//被維護方
 //    private OrderDetail orderDetail;

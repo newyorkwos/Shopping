@@ -30,14 +30,14 @@ class ProductInfoRepositoryTest {
     @Test
     public void saveTest(){
         ProductInfo productInfo=new ProductInfo();
-        productInfo.setProductId(123456L);
+        //productInfo.setProductId(123456L);
         productInfo.setProductName("鹹蛋");
         productInfo.setProductPrice(30L);
-        productInfo.setProductStock(100);
+        productInfo.setProductStock(300);
         productInfo.setProductDescription("很好吃");
         productInfo.setProductIcon("https://res.klook.com/image/upload/fl_lossy.progressive/q_auto/f_auto/blogtw/%E9%BE%8D%E8%B2%93%E5%9C%96%E7%89%87.jpg");
         productInfo.setProductStatus(0);
-        productInfo.setProductCategory(productCategoryRepository.findByCategoryType(1));
+        productInfo.setProductCategory(productCategoryRepository.findByCategoryType(3));
 
         ProductInfo result=productInfoRepository.save(productInfo);
         Assert.assertNotNull(result);
