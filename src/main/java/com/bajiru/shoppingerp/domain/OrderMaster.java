@@ -8,7 +8,9 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Description create Order Master domain
@@ -47,6 +49,9 @@ public class OrderMaster {
 
     //pay status 0:yet
     private Integer payStatus= PayStatusEnum.WAIT.getCode();
+
+    @OneToMany(mappedBy = "orderMaster", cascade={CascadeType.PERSIST, CascadeType.REMOVE}, fetch=FetchType.EAGER)
+    private List<OrderDetail> orderDetails=new ArrayList<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 /**
  * @Description
  * @AuthorName StevenWu
@@ -32,7 +34,7 @@ class OrderDetailRepositoryTest {
     public void saveTest(){
         OrderDetail orderDetail=new OrderDetail();
         OrderMaster orderMaster=new OrderMaster();
-        orderMaster=orderMasterRepository.findById(1L).orElse(null);
+        orderMaster=orderMasterRepository.findById(2L).orElse(null);
         //orderMaster.setOrderId(11111123L);
         //orderDetail.setOrderMaster(orderMasterRepository.getOne(2L));
         orderDetail.setOrderMaster(orderMaster);
@@ -49,5 +51,7 @@ class OrderDetailRepositoryTest {
 
     @Test
     void findByOrderMasterByOrderId() {
+        List<OrderDetail> orderDetailList=orderDetailRepository.findByOrderMaster_OrderId(1L);
+        Assert.assertNotEquals(0,orderDetailList);
     }
 }

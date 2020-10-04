@@ -41,6 +41,7 @@ public class OrderDetail {
     //@OneToMany(mappedBy = "orderDetail", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     //private List<ProductInfo> productInfos=new ArrayList<>();
     //(cascade={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}) //當儲存oredrdetail時，productInfo也要被保存,Merge=集聯更新
+    //若只是查詢後儲存就不需要用casecade
     @OneToOne
     private ProductInfo productInfo;
 
